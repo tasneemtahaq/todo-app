@@ -3,18 +3,19 @@ let todos = [];
 let condition = true;
 while (condition) {
     let addTask = await inquirer.prompt([
-        { name: 'todo',
-            type: 'input',
+        {
+            name: "firstQuestion",
+            type: "input",
             message: "What you want to add in your Todos?"
         },
         {
-            name: 'addMore',
-            type: 'confirm',
+            name: "moreSecondQuestion",
+            type: "confirm",
             message: "Do you want to add more?",
-            default: "false"
+            default: "true"
         }
     ]);
-    todos.push(addTask.todo);
-    condition = addTask.addmore;
+    todos.push(addTask.firstQuestion);
+    condition = addTask.moreSecondQuestion;
     console.log(todos);
 }
